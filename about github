@@ -1,0 +1,32 @@
+"git cloneやり方"
+
+自分でファイルを作成してそのターミナルの中で
+
+git clone https://github.com/inagaki-akihiro/gradibus1.git
+
+"変更したものをリモートリポジトリに反映する方法　pushのやり方"
+git add .
+
+git commit -m "どこを変更したかを書く"
+
+git push origin master
+
+"他人がpushしたものをローカルリポジトリに更新する pull"
+
+git remote add origin git@github.com:inagaki-akihiro/gradibus1.git
+
+git pull origin master
+
+"作業するときは
+
+developブランチでの作業をしてください。
+
+ブランチの切り方"
+
+git branch develop （作成済み）
+
+git checkout develop
+
+"masterブランチにマージする"
+
+git merge develop
