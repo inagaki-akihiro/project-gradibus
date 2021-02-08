@@ -30,3 +30,10 @@ git checkout develop
 "masterブランチにマージする"
 
 git merge develop
+
+
+"errorが発生するときに試してほしいこと"
+
+ディレクトリを変更していない
+
+対処法　cd project-gradibus1
