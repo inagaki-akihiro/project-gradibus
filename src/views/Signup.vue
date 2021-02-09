@@ -1,3 +1,4 @@
+<!--次回は文字制限から-->
 <template>
   <div class="signup">
    <h2>会員情報入力</h2>
@@ -7,16 +8,16 @@
    <input class="loginInput" v-model="user.name" placeholder="（例）メルカリ太郎">
 
    <h4>メールアドレス<span class="mustSpan">必須</span></h4>
-   <input class="loginInput" v-model="user.email" :notes="emailErrorText" @input="regExp" placeholder="PC・携帯どちらでも可">
+   <input class="loginInput" v-model="user.email" :notes="emailErrorText" @input="regExp(value)" placeholder="PC・携帯どちらでも可">
 
    <h4>パスワード<span class="mustSpan">必須</span></h4>
    <input class="loginInput" v-model="user.password" placeholder="7文字以上の半角英数字" ><!--ここは正規表現を使いたい-->
   <br>
-  <input class="checkbox"  type="checkbox" @click="changePasswordDisplay">
+  <input class="checkbox"  type="checkbox" :clicked="changePasswordDisplay">
   <span>パスワードを表示する</span>
   <p v-if="isPasswordDisplay">{{user.password}}</p>
   <br>
-  <button class="signupButton" @click="addUser">新規作成</button>
+  <button class="signupButton2" @click="addUser">新規作成</button>
   </form>
   </div>
 </template>
@@ -60,10 +61,14 @@ export default {
   color:white;
   background-color:red;
 }
-.signupButton{
+.signupButton2{
   margin-top:50px;
+  margin-bottom:100px;
   width:500px;
     height:40px;
+    background-color:#FF0000;
+    color:white;
+    border-radius:10px;
 }
 
 </style>
