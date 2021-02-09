@@ -22,7 +22,14 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    children : [
+      {
+        path: '/signup',
+        name: 'Signup',
+       component : Signup
+      }
+    ]
   }
 ]
 
