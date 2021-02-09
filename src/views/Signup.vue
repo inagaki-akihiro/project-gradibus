@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+//import axios from 'axios'
 export default {
   data(){
     return{
@@ -45,24 +45,7 @@ export default {
     changePasswordDisplay(){
       this.isPasswordDisplay =!this.isPasswordDisplay
     },
-    addUser(){
-      const self = this
-      //const url = ここにAjax通信をした値を格納するurlを入れる
-      
-      axios.post('url',this.user.name,this.user.email,this.user.password)
-      .then(res => {
-        if(res.data.result){
-          //メール送信完了画面
-        }else{
-          self.error = res.data.error
-        }
-      })
-      //.catch(
-      //  err => {
-          //例外処理を行う
-      //  }
-      //)
-    }
+    
   },
   computed:{
     emailErrorText(){
