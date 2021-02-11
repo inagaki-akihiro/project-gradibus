@@ -2,17 +2,14 @@
   <div class="login">
       <p>アカウントをお持ちでない方はこちら</p>
     <router-link to="/signup"><button class="signupButton1">新規作成</button></router-link>
-    
-<!-- ここにvue-routerで新規作成ページを繋ぐ -->
-    <div>
-    <router-view/>
-     </div>
+    <br>
+
      
-   <input  class="loginInput" v-model = "mailValue" placeholder = "メールアドレス">
+   <input  class="loginInput" v-model = "mailValue" placeholder = "メールアドレス"  @input="regExp(value)"> 
    <br>
    <input  class="loginInput" v-model = "passwordValue" placeholder = "パスワード">
    <br>
-   <button class="loginButton" @click="Signin">ログイン</button> 
+   <button class="loginButton"  @click="Signin">ログイン</button > 
   </div>
 </template>
 

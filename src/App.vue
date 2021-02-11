@@ -4,8 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/signup">新規作成</router-link>
       <router-link to="/login">Login</router-link>
-    <img src="./assets/logo.png">
-    <div>
+    <!--<img src="./assets/logo.png">
+     <div>
       <p>
         If Element is successfully added to this project, you'll see an
         <code v-text="'<el-button>'"></code>
@@ -14,18 +14,18 @@
       <el-button>el-button</el-button>
     </div>
     <router-view/>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+ // components: {
+ //   HelloWorld
+ // }
 }
 </script>
 

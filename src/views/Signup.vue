@@ -4,17 +4,16 @@
    <h2>会員情報入力</h2>
 
    <h4>ニックネーム<span class="mustSpan">必須</span></h4> 
-<form @submit.prevent="submit">
+<form @submit.prevent="addUser"><!--kokoni-->
    <input class="loginInput" v-model="user.name" placeholder="（例）メルカリ太郎">
 
    <h4>メールアドレス<span class="mustSpan">必須</span></h4>
    <input class="loginInput" v-model="user.email" :notes="emailErrorText" @input="regExp(value)" placeholder="PC・携帯どちらでも可">
 
    <h4>パスワード<span class="mustSpan">必須</span></h4>
-   <input class="loginInput" v-model="user.password" placeholder="7文字以上の半角英数字" ><!--ここは正規表現を使いたい-->
+   <input class="loginInput" v-model="user.password" :type="isPasswordDisplay ? 'text' : 'password'" placeholder="7文字以上の半角英数字" ><!--ここは正規表現を使いたい-->
   <br>
-  <input class="checkbox"  type="checkbox" :clicked="changePasswordDisplay">
-  <span>パスワードを表示する</span>
+
   <p v-if="isPasswordDisplay">{{user.password}}</p>
   <br>
   <button class="signupButton2" @click="addUser">新規作成</button>
@@ -23,7 +22,7 @@
 </template>
 
 <script>
-//import axios from 'axios'
+import axios from 'axios'
 export default {
   data(){
     return{
@@ -44,8 +43,34 @@ export default {
       reg.test(email) ? this.emailError = false : this.emailError = true //emailErrorの初期値はfalseだから
     },
     changePasswordDisplay(){
-      this.isPasswordDisplay =!this.isPasswordDisplay
+      this.isPasswordDisplay = !this.isPasswordDisplay
     },
+    addUser(){
+                this.errors = {}
+                const self = this
+      const url = "https://localhost:3000/"
+      const params = {
+        name : this.user.name,
+        password : this.user.password,
+        email : this.user.email
+      }
+      
+      axios.post(url,params)
+      .then(//res =>
+       {
+        //location.href = '/home'
+      })
+      .catch(
+        err => {
+          const responseErrors = err.response.data.errors
+          const errors = {}
+          for(let key in responseErrors){
+              errors[key] = responseErrors[key][0]
+          }
+          self.errors = errors
+        }
+      )
+    }
     
   },
   computed:{
