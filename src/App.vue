@@ -13,8 +13,9 @@
       </p>
       <el-button>el-button</el-button>
     </div>
-    <router-view/>
+   
    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <router-view/>
   </div>
 </template>
 
