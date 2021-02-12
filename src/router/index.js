@@ -6,6 +6,7 @@ import Signup from '../views/Signup.vue'
 
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,7 +19,8 @@ const routes = [
     path: '/signup',
     name: 'Signup',
    component : Signup
-  },
+  }
+  ,
   {
     path: '/login',
     name: 'Login',

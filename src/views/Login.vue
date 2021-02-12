@@ -6,8 +6,10 @@
 
      
    <input  class="loginInput" v-model = "mailValue" placeholder = "メールアドレス"  @input="regExp(value)"> 
+   <div v-text="errors.mailValue" v-if="errors.mailValue">メールアドレスを入力してください</div>
    <br>
    <input  class="loginInput" v-model = "passwordValue" placeholder = "パスワード">
+   <div v-text="errors.passwordValue" v-if="errors.passwordValue">パスワードを入力してください</div>
    <br>
    <button class="loginButton"  @click="Signin">ログイン</button > 
   </div>
