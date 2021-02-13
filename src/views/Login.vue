@@ -1,5 +1,6 @@
 <template>
-  <div class="login">
+  <div id="login">
+    <div class="allLogin">
       <p>アカウントをお持ちでない方はこちら</p>
     <router-link to="/signup"><button class="signupButton1">新規作成</button></router-link>
     <br>
@@ -12,6 +13,7 @@
    <div v-text="errors.passwordValue" v-if="errors.passwordValue">パスワードを入力してください</div>
    <br>
    <button class="loginButton"  @click="Signin">ログイン</button > 
+  </div>
   </div>
 </template>
 
@@ -28,7 +30,7 @@ export default {
             Signin(){
                 this.errors = {}
                 const self = this
-      const url = "https://localhost:3000/"
+      const url = "https://localhost:3000"
       const params = {
         name : this.user.name,
         password : this.user.password,
@@ -56,6 +58,9 @@ export default {
 </script>
 
 <style>
+.allLogin{
+  text-align: center;
+}
 .signupButton {
     margin-bottom:50px;
      width:500px;

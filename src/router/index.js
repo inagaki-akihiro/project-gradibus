@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
+import CategoryRouter from '../views/CategoryRouter.vue'
+import Withdraw from '../views/Withdraw.vue'
 
 
 
@@ -16,11 +18,20 @@ const routes = [
     component: Home
   },
   {
+    path: '/categoryrouter',
+    name: 'CategoryRouter',
+   component : CategoryRouter
+  },
+  {
     path: '/signup',
     name: 'Signup',
    component : Signup
-  }
-  ,
+  },
+  {
+    path: '/withdraw',
+    name: 'Withdraw',
+   component : Withdraw
+  },
   {
     path: '/login',
     name: 'Login',
