@@ -1,9 +1,10 @@
 <!--次回は文字制限から-->
 <template>
   <div class="signup">
+        <form @submit.prevent="addUser"><!--kokoni-->
    <div class="allSignup">
    <h2>会員情報入力</h2>
-<form @submit.prevent="addUser"><!--kokoni-->
+ 
    <h4>ニックネーム<span class="mustSpan">必須</span></h4> 
    <input class="loginInput" v-model="user_name" placeholder="（例）メルカリ太郎">
      <h4>ユーザーID<span class="mustSpan">必須</span></h4>
@@ -24,8 +25,8 @@
     <input class="userIntroduce" v-model="introduction" placeholder="紹介文を入力してください。" maxlength="200">
     <br>
   <button class="signupButton2" @click="addUser">新規作成</button>
-  </form>
   </div>
+    </form>
   </div>
 </template>
 

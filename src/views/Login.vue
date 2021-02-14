@@ -1,5 +1,6 @@
 <template>
   <div id="login">
+       <form @submit.prevent="Signin">
     <div class="allLogin">
       <p>アカウントをお持ちでない方はこちら</p>
     <router-link to="/signup"><button class="signupButton1">新規作成</button></router-link>
@@ -14,6 +15,7 @@
    <br>
    <button class="loginButton"  @click="Signin">ログイン</button > 
   </div>
+       </form>
   </div>
 </template>
 
