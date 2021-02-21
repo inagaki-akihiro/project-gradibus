@@ -63,8 +63,8 @@ export default {
     },
     addUser(){
                 this.errors = {}
-                const self = this
-      const url = "https://localhost:3000"
+                /*const self = this*/
+      const url = "http://localhost:3000/User/"
       const params = {
         name : this.user_name,
         password : this.password,
@@ -73,22 +73,24 @@ export default {
         tel : this.tel,
         introduction : this.introduction,
         avatar : this.avatar,
-        del : this.del
+        
       }
       
       axios.post(url,params)
-      .then(//res =>
+      .then(() =>
        {
-        //location.href = '/home'
+        location.href = '/home'
       })
       .catch(
-        err => {
-          const responseErrors = err.response.data.errors
+        /*err**/() => {
+          /*const responseErrors = err.response.data.errors
           const errors = {}
           for(let key in responseErrors){
-              errors[key] = responseErrors[key][0]
-          }
-          self.errors = errors
+              errors[key] = responseErrors[key][0]}*/
+          
+          
+          alert("エラー")
+          /*self.errors = errors*/
         }
       )
     }

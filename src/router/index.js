@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import CategoryRouter from '../views/CategoryRouter.vue'
-import Withdraw from '../views/Withdraw.vue'
+import Del from '../views/Del.vue'
 
 
 
@@ -28,9 +28,9 @@ const routes = [
    component : Signup
   },
   {
-    path: '/withdraw',
-    name: 'Withdraw',
-   component : Withdraw
+    path: '/del',
+    name: 'Del',
+   component : Del
   },
   {
     path: '/login',

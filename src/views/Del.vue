@@ -1,19 +1,14 @@
 <template>
-  <div id="login">
+  <div id="del">
        <form @submit.prevent="Signin">
-    <div class="allLogin">
-      <p>アカウントをお持ちでない方はこちら</p>
-    <router-link to="/signup"><button class="signupButton1">新規作成</button></router-link>
-    <br>
-
-     
-   <input  class="loginInput" v-model = "mailValue" placeholder = "メールアドレス"  @input="regExp(value)"> 
+    <div class="allDel">
+   <input  class="delInput" v-model = "mailValue" placeholder = "メールアドレス"  @input="regExp(value)"> 
    <div v-text="errors.mailValue" v-if="errors.mailValue">メールアドレスを入力してください</div>
    <br>
-   <input  class="loginInput" v-model = "passwordValue" placeholder = "パスワード">
+   <input  class="delInput" v-model = "passwordValue" placeholder = "パスワード">
    <div v-text="errors.passwordValue" v-if="errors.passwordValue">パスワードを入力してください</div>
    <br>
-   <button class="loginButton"  @click="Signin">ログイン</button > 
+   <button class="delButton"  @click="Del">アカウントを削除</button > 
   </div>
        </form>
   </div>
@@ -29,10 +24,10 @@ export default {
             errors:{}
             }},
          methods:{
-            Signin(){
+            Del(){
                 this.errors = {}
                 /*const self = this*/
-      const url = "http://localhost:3000/User/"
+      const url = "http://localhost:3001/User/del/1"
       const params = {
         name : this.user.name,
         password : this.user.password,
@@ -62,28 +57,27 @@ export default {
 </script>
 
 <style>
-.allLogin{
+.allDel{
   text-align: center;
-
 }
-.signupButton {
+.delButton {
     margin-bottom:50px;
      width:500px;
     height:40px;
 }
 
-.loginButton{
+.delButton{
     width:500px;
     height:40px;
 }
 
-.loginInput{
+.delInput{
     box-sizing: border-box;
     width:500px;
     height:40px;
     margin-bottom:30px;
 }
-.signupButton1{
+.delButton1{
      width:500px;
     height:40px;
     color:white;
