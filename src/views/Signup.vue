@@ -24,8 +24,6 @@
   <h4>ユーザー紹介文<span class="mustSpan">必須</span></h4>
     <input class="userIntroduce" v-model="introduction" placeholder="紹介文を入力してください。" maxlength="200">
     <br>
-    <button class="avatar" @click="avatarAddButton()">アイコン登録</button>
-    <br>
   <button class="signupButton2" @click="addUser">新規作成</button>
   </div>
     </form>

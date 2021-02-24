@@ -5,7 +5,7 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import CategoryRouter from '../views/CategoryRouter.vue'
 import Del from '../views/Del.vue'
-
+import UserDetail from '../views/UserDetail.vue'
 
 
 
@@ -31,6 +31,18 @@ const routes = [
     path: '/del',
     name: 'Del',
    component : Del
+  },
+  {
+    path: '/userdetail', // ユーザー詳細ページのルーターで商品詳細ページからルーターを繋げる。 
+    name: 'UserDetail',
+   component : UserDetail,
+   children:[
+     {
+      path: '/categoryrouter',
+      name: 'CategoryRouter',
+     component : CategoryRouter
+     }
+   ]
   },
   {
     path: '/login',
