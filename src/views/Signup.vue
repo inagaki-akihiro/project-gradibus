@@ -11,7 +11,7 @@
     <input class="loginInput" v-model="user_id" placeholder="ユーザーIDを入力してください。">
 
    <h4>メールアドレス<span class="mustSpan">必須</span></h4>
-   <input class="loginInput" v-model="email" :notes="emailErrorText" @input="regExpEmail(value)" placeholder="PC・携帯どちらでも可">
+<input class="loginInput" v-model="email" placeholder="PC・携帯どちらでも可" @input="regExpEmail(email)" :notes="emailErrorText">
    <h4>パスワード<span class="mustSpan">必須</span></h4>
    <input class="loginInput" v-model="password" :type="isPasswordDisplay ? 'text' : 'password'" placeholder="7文字以上の半角英数字" minlength="7"><!--ここは正規表現を使いたい-->
   <br>
@@ -19,10 +19,12 @@
   <p v-if="isPasswordDisplay">{{password}}</p>
   <br>
   <h4>電話番号<span class="mustSpan">必須</span></h4>
-    <input class="loginInput" v-model="tel" placeholder="電話番号を入力してください。" :notes="telErrorText" @input="regExpCall(value)">
+  <input class="loginInput" v-model="tel" placeholder="電話番号を入力してください" @input="regExpCall(tel)" :notes="telErrorText"> 
     <br>
   <h4>ユーザー紹介文<span class="mustSpan">必須</span></h4>
     <input class="userIntroduce" v-model="introduction" placeholder="紹介文を入力してください。" maxlength="200">
+    <br>
+    <button class="avatar" @click="avatarAddButton()">アイコン登録</button>
     <br>
   <button class="signupButton2" @click="addUser">新規作成</button>
   </div>
@@ -93,6 +95,9 @@ export default {
           /*self.errors = errors*/
         }
       )
+    },
+    avatarAddButton(){
+
     }
     
   },
@@ -127,6 +132,11 @@ export default {
     background-color:#FF0000;
     color:white;
     border-radius:10px;
+}
+.avatar{
+   margin-top:50px;
+   width:200px;
+   height:40px;
 }
 
 </style>

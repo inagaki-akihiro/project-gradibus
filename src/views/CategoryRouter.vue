@@ -2,8 +2,8 @@
 <div id="categoryrouter">
     <p>カテゴリー一覧</p>
     <!--サーバーからcategoryをもらってそれをボタン化する。-->
-        <button v-for="(user,index) in users" :key="index">
-            {{user.category}}
+        <button class="categoryButton" v-for="(user,index) in users" :key="index">
+            {{user.name}}
         </button>
     
     </div>
@@ -16,14 +16,19 @@ export default {
             users : []
         }
     },
-    mounted:{
-        addButton(){
-            axios.get("https://localhost:3000/")
+    mounted(){
+        
+            axios.get('https://jsonplaceholder.typicode.com/users')
             .then(res => this.users = res.data)
-        }
+            .catch(err => alert(err))
+        
     }
 }
 </script>
 <style >
-
+  .categoryButton{
+      border-radius:5px;
+      margin-right:20px;
+      margin-top:30px;
+  }
 </style>
