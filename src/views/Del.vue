@@ -21,7 +21,7 @@ export default {
             Del(id){
                // this.errors = {}
                 /*const self = this*/
-      const url = "http://localhost:3001/User/del/1"
+      const url = "http://localhost:3000/User/del/1"
       axios.delete(url + id)
       .then(() =>
        {

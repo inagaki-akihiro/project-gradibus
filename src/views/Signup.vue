@@ -24,6 +24,9 @@
   <h4>ユーザー紹介文<span class="mustSpan">必須</span></h4>
     <input class="userIntroduce" v-model="introduction" placeholder="紹介文を入力してください。" maxlength="200">
     <br>
+    <br>
+    <Avatar />
+
   <button class="signupButton2" @click="addUser">新規作成</button>
   </div>
     </form>
@@ -32,7 +35,9 @@
 
 <script>
 import axios from 'axios'
+import Avatar from '../components/Avatar.vue';
 export default {
+  components: { Avatar },
   data(){
     return{
       isPasswordDisplay : false,
@@ -47,6 +52,7 @@ export default {
       introduction : "",
       avatar : "", //userのアイコンを作る
       del : "",//未退会=0 退会=1
+      input : ""
     }
   },
   methods:{
